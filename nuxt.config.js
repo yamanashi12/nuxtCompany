@@ -11,9 +11,13 @@ module.exports = {
       { hid: 'description', name: 'description', content: '求苗体育聚集各类体育产业IP，包含但不限于体育赛事报名、体育票务、体育培训、体育旅游、体育赞助、体育用品等各大板块，实现多种资源的聚合与互通的体育消费和资源服务互联网体育交易平台。' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', type: 'text/css', href: '/styles/styles/styles.scss' },
     ]
   },
+  modules: [
+    'bootstrap-vue/nuxt',
+  ],
   /*
   ** Customize the progress bar color
   */

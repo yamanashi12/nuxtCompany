@@ -1,64 +1,112 @@
 <template>
-  <section class="container">
-    <div>
-      <app-logo/>
-      <h1 class="title">
-        nuxt
-      </h1>
-      <h2 class="subtitle">
-        Nuxt.js project
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green">Documentation</a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey">GitHub</a>
-      </div>
+  <section >
+    <X-header />
+    <b-carousel id="carousel1"
+                style="text-shadow: 1px 1px 2px #333;"
+                controls
+                indicators
+                background="#ababab"
+                :interval="4000"
+                img-width="auto"
+                img-height="auto"
+                v-model="slide"
+                @sliding-start="onSlideStart"
+                @sliding-end="onSlideEnd"
+    >
+
+      <!-- Text slides with image -->
+      <b-carousel-slide caption="First slide"
+                        text="Nulla vitae elit libero, a pharetra augue mollis interdum."
+                        img-src="https://lorempixel.com/1024/480/technics/2/"
+      ></b-carousel-slide>
+
+      <!-- Slides with custom text -->
+      <b-carousel-slide img-src="https://lorempixel.com/1024/480/technics/4/">
+        <h1>Hello world!</h1>
+      </b-carousel-slide>
+
+      <!-- Slides with image only -->
+      <b-carousel-slide img-src="https://lorempixel.com/1024/480/technics/8/">
+      </b-carousel-slide>
+
+      <!-- Slides with img slot -->
+      <!-- Note the classes .d-block and .img-fluid to prevent browser default image alignment -->
+      <b-carousel-slide>
+        <img slot="img" class="d-block img-fluid w-100" width="1024" height="480"
+             src="https://lorempixel.com/1024/480/technics/5/" alt="image slot">
+      </b-carousel-slide>
+
+
+    </b-carousel>
+    <x-title>Hot</x-title>
+    <div class="container row">
+      <product-item v-for="(item, index) in product" :key='index' :data="item"/>
     </div>
   </section>
 </template>
 
 <script>
-import AppLogo from '~/components/AppLogo.vue'
+import XHeader from '~/components/XHeader.vue'
+import XTitle from '~/components/XTitle.vue'
+import ProductItem from '~/components/ProductItem.vue'
 
 export default {
   components: {
-    AppLogo
+    XHeader,
+    XTitle,
+    ProductItem
+  },
+  data () {
+    return {
+      slide: 0,
+      sliding: null,
+      product: [
+        {
+          title: 'aaaaa',
+          imgUrl: 'http://demo.cssmoban.com/cssthemes4/twts_16_bizpage-master/img/portfolio/app1.jpg',
+          id: 1
+        },
+        {
+          title: 'aaaaa',
+          imgUrl: 'http://demo.cssmoban.com/cssthemes4/twts_16_bizpage-master/img/portfolio/app1.jpg',
+          id: 1
+        },
+        {
+          title: 'aaaaa',
+          imgUrl: 'http://demo.cssmoban.com/cssthemes4/twts_16_bizpage-master/img/portfolio/app1.jpg',
+          id: 1
+        },
+        {
+          title: 'aaaaa',
+          imgUrl: 'http://demo.cssmoban.com/cssthemes4/twts_16_bizpage-master/img/portfolio/app1.jpg',
+          id: 1
+        },
+        {
+          title: 'aaaaa',
+          imgUrl: 'http://demo.cssmoban.com/cssthemes4/twts_16_bizpage-master/img/portfolio/app1.jpg',
+          id: 1
+        },
+        {
+          title: 'aaaaa',
+          imgUrl: 'http://demo.cssmoban.com/cssthemes4/twts_16_bizpage-master/img/portfolio/app1.jpg',
+          id: 1
+        }
+      ]
+    }
+  },
+  methods: {
+    onSlideStart (slide) {
+      this.sliding = true
+    },
+    onSlideEnd (slide) {
+      this.sliding = false
+    }
   }
 }
 </script>
 
 <style>
-.container {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
+#carousel1{
+  
 }
 </style>
