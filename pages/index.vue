@@ -13,7 +13,6 @@
                 @sliding-start="onSlideStart"
                 @sliding-end="onSlideEnd"
     >
-
       <!-- Text slides with image -->
       <b-carousel-slide caption="First slide"
                         text="Nulla vitae elit libero, a pharetra augue mollis interdum."
@@ -35,12 +34,12 @@
         <img slot="img" class="d-block img-fluid w-100" width="1024" height="480"
              src="https://lorempixel.com/1024/480/technics/5/" alt="image slot">
       </b-carousel-slide>
-
-
     </b-carousel>
     <x-title>Hot</x-title>
-    <div class="container row">
-      <product-item v-for="(item, index) in product" :key='index' :data="item"/>
+    <div class="container">
+      <div class="row">
+        <product-item v-for="(item, index) in product" :key='index' :data="item"/>
+      </div>
     </div>
   </section>
 </template>

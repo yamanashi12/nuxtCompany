@@ -1,3 +1,5 @@
+const resourceVersion = '1.0.0'
+
 module.exports = {
   /*
   ** Headers of the page
@@ -12,11 +14,14 @@ module.exports = {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', type: 'text/css', href: '/styles/styles/styles.scss' },
-    ]
+    ],
+    css: [
+      '~/styles/fonts/ionicons/css/ionicons.css?v=' + resourceVersion,
+    ],
   },
   modules: [
-    'bootstrap-vue/nuxt',
+    'bootstrap-vue/nuxt'
+    // ['bootstrap-vue/nuxt', { css: false }],
   ],
   /*
   ** Customize the progress bar color
