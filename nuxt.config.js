@@ -16,7 +16,7 @@ module.exports = {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
     ],
     css: [
-      '~/styles/fonts/ionicons/css/ionicons.css?v=' + resourceVersion,
+      '/styles/fonts/ionicons/css/ionicons.css?v=' + resourceVersion,
     ],
   },
   modules: [

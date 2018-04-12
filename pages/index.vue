@@ -41,6 +41,7 @@
         <product-item v-for="(item, index) in product" :key='index' :data="item"/>
       </div>
     </div>
+    <x-footer />
   </section>
 </template>
 
@@ -48,12 +49,14 @@
 import XHeader from '~/components/XHeader.vue'
 import XTitle from '~/components/XTitle.vue'
 import ProductItem from '~/components/ProductItem.vue'
+import XFooter from '~/components/XFooter.vue'
 
 export default {
   components: {
     XHeader,
     XTitle,
-    ProductItem
+    ProductItem,
+    XFooter
   },
   data () {
     return {
