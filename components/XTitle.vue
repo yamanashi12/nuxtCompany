@@ -13,7 +13,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../styles/var";
 .section-title {
   margin-top: 60px;
   font-size: 32px;

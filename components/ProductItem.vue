@@ -26,7 +26,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../styles/var";
 .portfolio-item {
   position: relative;
   height: 360px;

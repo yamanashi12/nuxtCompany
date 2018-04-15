@@ -32,7 +32,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../styles/var';
 header{
   z-index: 10;
   position: absolute;

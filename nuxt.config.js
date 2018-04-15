@@ -15,10 +15,11 @@ module.exports = {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
     ],
-    css: [
-      '/styles/fonts/ionicons/css/ionicons.css?v=' + resourceVersion,
-    ],
   },
+  css: [
+    { src: '~styles/styles.scss', lang: 'scss' },
+    '~/styles/fonts/ionicons/css/ionicons.css'
+  ],
   modules: [
     'bootstrap-vue/nuxt'
     // ['bootstrap-vue/nuxt', { css: false }],
@@ -43,6 +44,25 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }
+      const sassResourcesLoader = {  
+        loader: 'sass-resources-loader',  
+        options: {  
+          resources: [  
+           'styles/styles.scss',
+           'styles/var.scss'
+          ]  
+        }  
+      }  
+      // 遍历nuxt定义的loader配置，向里面添加新的配置。  
+      config.module.rules.forEach((rule) => {  
+        if (rule.test.toString() === '/\\.vue$/') {  
+          rule.options.loaders.sass.push(sassResourcesLoader)  
+          rule.options.loaders.scss.push(sassResourcesLoader)  
+        }  
+        if (['/\\.sass$/', '/\\.scss$/'].indexOf(rule.test.toString()) !== -1) {  
+          rule.use.push(sassResourcesLoader)  
+        }  
+      })
     }
   }
 }
