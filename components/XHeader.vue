@@ -5,10 +5,10 @@
         <img src="https://gold-cdn.xitu.io/v3/static/img/logo.a7995ad.svg" alt="logo" />
       </div>
       <div class="mune">
-        <li><a href="">Home</a></li>
-        <li><a href="">About Us</a></li>
+        <li><nuxt-link to="/">Home</nuxt-link></li>
+        <li><nuxt-link to="/about">About Us</nuxt-link></li>
         <li>
-          <a href="">Product</a>
+          <nuxt-link to="/product">Product</nuxt-link>
           <ul>
             <li>111112312</li>
             <li>111112312</li>
@@ -17,7 +17,7 @@
             <li>111112312</li>
           </ul>
         </li>
-        <li><a href="">Contact</a></li>
+        <li><nuxt-link to="/contact">Contact</nuxt-link></li>
       </div>
     </div>
   </header>
