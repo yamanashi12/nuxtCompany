@@ -1,26 +1,18 @@
 <template>
-  <header>
-    <div class="head-box">
-      <div class="logo">
-        <img src="https://gold-cdn.xitu.io/v3/static/img/logo.a7995ad.svg" alt="logo" />
-      </div>
-      <div class="mune">
-        <li><nuxt-link to="/">Home</nuxt-link></li>
-        <li><nuxt-link to="/about">About Us</nuxt-link></li>
-        <li>
-          <nuxt-link to="/product">Product</nuxt-link>
-          <ul>
-            <li>111112312</li>
-            <li>111112312</li>
-            <li>111112312</li>
-            <li>111112312</li>
-            <li>111112312</li>
-          </ul>
-        </li>
-        <li><nuxt-link to="/contact">Contact</nuxt-link></li>
-      </div>
-    </div>
-  </header>
+  <b-navbar class="" toggleable="md" type="dark">
+    <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
+    <b-navbar-brand href="#">
+      <img src="https://gold-cdn.xitu.io/v3/static/img/logo.a7995ad.svg" alt="logo" />
+    </b-navbar-brand>
+    <b-collapse is-nav id="nav_collapse">
+      <b-navbar-nav  class="ml-auto">
+        <b-nav-item href="/">Home</b-nav-item>
+        <b-nav-item href="/about">About Us</b-nav-item>
+        <b-nav-item href="/product">Product</b-nav-item>
+        <b-nav-item href="/contact">contact</b-nav-item>
+      </b-navbar-nav>
+    </b-collapse>
+  </b-navbar>
 </template>
 
 <script>
@@ -32,66 +24,20 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-header{
-  z-index: 10;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 90px;
-  padding: 20px 0;
-  .head-box{
-    max-width: 1200px;
-    width: 100%;
-    margin: 0 auto;
-  }
-  .logo{
-    display: inline-block;
-    float: left;
-    img{
-      height: 50px;
-      width: auto;
-    }
-  }
-  .mune{
-    display: inline-block;
-    float: right;
-    li{
-      position: relative;
-      list-style-type: none;
-      float: left;
-      line-height: 50px;
-      padding: 0 15px;
-      font-weight: 800;
-      font-size: 16px;
-      a{
-        color: $color-c10;
+@import "../styles/var";
+.navbar-dark .navbar-nav .nav-link {
+    color: $color-c2;
+}
+.navbar-dark .navbar-toggler {
+    background: $color-c1
+}
+
+@media (max-width: 768px){
+  .navbar{
+    .navbar-nav{
+      li.nav-item{
+        border-bottom: 1px solid $color-c3;
       }
-      ul{
-        display: none
-      }
-      &:hover{
-        a{
-          color: $color-c1
-        }
-        ul{
-          position: absolute;
-          display: block;
-          left: 0;
-          top: 50px;
-          background: $color-c1;
-          border-radius: 5px;
-          min-width: 80px;
-          padding: 5px 0;
-          margin: 0;
-          li{
-            padding: 5px 10px;
-            text-align: left;
-            line-height: 30px;
-          }
-        }
-      }
-      
     }
   }
 }

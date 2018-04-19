@@ -37,26 +37,19 @@
     </b-carousel>
     <x-title>Hot</x-title>
     <div class="container">
-      <div class="row">
+      <b-row>
         <product-item v-for="(item, index) in product" :key='index' :data="item"/>
-      </div>
+      </b-row>
     </div>
     <x-footer />
   </section>
 </template>
 
 <script>
-import XHeader from '~/components/XHeader.vue'
-import XTitle from '~/components/XTitle.vue'
-import ProductItem from '~/components/ProductItem.vue'
-import XFooter from '~/components/XFooter.vue'
+
 
 export default {
   components: {
-    XHeader,
-    XTitle,
-    ProductItem,
-    XFooter
   },
   data () {
     return {

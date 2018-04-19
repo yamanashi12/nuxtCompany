@@ -3,9 +3,9 @@
     <X-header />
     <b-breadcrumb :items="breadcrumb"/>
     <div class="container">
-      <div class="row">
+      <b-row class="row">
         <product-item v-for="(item, index) in product" :key='index' :data="item"/>
-      </div>
+      </b-row>
     </div>
     <x-footer />
   </section>

@@ -3,8 +3,8 @@
     <X-header />
     <b-breadcrumb :items="breadcrumb"/>
     <div class="container product-details">
-      <div class="row">
-        <div class="col-sm-7 product-view">
+      <b-row>
+        <b-col md="7" class="product-view">
           <h2>Lorem Ipsum is simply dummy text of the printing and typesetting industry</h2>
           <p> <i class="glyphicon glyphicon-map-marker"></i><a href="#">state</a>, <a href="#">city</a>| Added at 06:55 pm, Ad ID: 987654321</p>
           <b-carousel id="carousel1"
@@ -15,8 +15,8 @@
             img-height="auto">
             <b-carousel-slide  v-for="(item, index) in imgList" :key='index' :img-src="item" />
           </b-carousel>
-        </div>
-        <div class="col-sm-5 product-details-grid">
+        </b-col>
+        <b-col md="5" class="product-details-grid">
           <div class="item-price">
 						<div class="product-price">
 							<p class="p-price">Price</p>
@@ -41,13 +41,13 @@
             </b-button>
 						<p><i class="ion-ios-telephone"></i>00-85-9875462655</p>
 					</div>
-        </div>
-      </div>
-      <div class="detail row">
+        </b-col>
+      </b-row>
+      <b-row class="detail">
         <img src="https://lorempixel.com/1024/480/technics/4/">
         <img src="https://lorempixel.com/1024/480/technics/4/">
         <img src="https://lorempixel.com/1024/480/technics/4/">
-      </div>
+      </b-row>
     </div>
     <x-footer />
   </section>
@@ -179,7 +179,7 @@ export default {
         content: "";
         position: absolute;
         z-index: 1;
-        left: -1098px;
+        left: -108px;
         margin-left: -105px;
         background-color: rgba(0, 0, 0, 0);
         border: 105px solid rgba(0, 0, 0, 0);
