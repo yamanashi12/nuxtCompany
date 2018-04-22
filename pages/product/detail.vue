@@ -10,10 +10,16 @@
           <b-carousel id="carousel1"
             controls
             indicators
+            v-model="slide"
             :interval="4000"
             img-width="auto"
             img-height="auto">
             <b-carousel-slide  v-for="(item, index) in imgList" :key='index' :img-src="item" />
+            <div class="minImg">
+              <li v-for="(item, index) in imgList" :key='index' :class="slide == index ? 'active':''">
+                <img :src="item" @click="changeImg(index)" />
+              </li>
+            </div>
           </b-carousel>
         </b-col>
         <b-col md="5" class="product-details-grid">
@@ -66,6 +72,7 @@ export default {
   },
   data() {
     return {
+      slide: 0,
       imgList: [
         "https://lorempixel.com/1024/480/technics/4/",
         "https://lorempixel.com/1024/480/technics/2/"
@@ -126,6 +133,9 @@ export default {
     },
     onSlideEnd(slide) {
       this.sliding = false;
+    },
+    changeImg (i) {
+      this.slide = i
     }
   }
 };
@@ -179,14 +189,13 @@ export default {
         content: "";
         position: absolute;
         z-index: 1;
-        left: -108px;
-        margin-left: -105px;
-        background-color: rgba(0, 0, 0, 0);
-        border: 105px solid rgba(0, 0, 0, 0);
-        border-right-color: rgba(1, 161, 133, 0.36);
-        height: 0;
-        width: 0;
+        margin-left: -98px;
         top: -3px;
+        width:0; 
+        height:0; 
+        border-top:100px solid transparent;
+        border-bottom: 100px solid transparent; 
+        border-right:80px solid rgba(1, 161, 133, 0.36);; 
       }
       .product-price {
         padding: 20px 0;
@@ -266,6 +275,26 @@ export default {
     img{
       width: 100%;
       height: auto;
+    }
+  }
+  .minImg{
+    margin-top: 10px;
+    li{
+      list-style-type: none;
+      float: left;
+      height: 60px;
+      width: auto;
+      margin-right: 5px;
+      opacity: 0.6;
+      border: 2px solid transparent;
+      &.active, &:hover{
+        opacity: 1;
+        border-color: $color-c1;
+      }
+      img{
+        width: auto;
+        height: 100%;
+      }
     }
   }
 }
